@@ -1,0 +1,30 @@
+<style>
+    .ID{
+        visibility: hidden;
+    }
+</style>
+<h3>Здесь вы можите оставить свой отрицательный отзыв</h3>
+  <br>
+  <form method="post">
+    <ul>
+        {% for n in my_list %}
+        <form method="post">
+            <li>
+                {% set num = num + 1 %}
+                {{n[0]}}<br>
+                {{n[1]}}<br>
+                {{n[2]}}<br>
+                {{n[3]}}<br>
+            </li>
+            <input type="submit" name="submit" value="Refactor">
+            <input type="submit" name="submit" value="Delete">
+            <input class = 'ID' name='index' maxlength="5" type="text" size="40" value={{num}}>
+        </form>
+        {% endfor %}
+    </ul>
+  </form>
+  <br>
+  <form method="POST">
+        <input type="submit" name="submit" value="Add">
+  </form>
+  <br>
